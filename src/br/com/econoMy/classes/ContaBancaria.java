@@ -3,8 +3,8 @@ package br.com.econoMy.classes;
 import java.util.ArrayList;
 
 public class ContaBancaria extends Usuario {
-    private int senhaDaConta = 1;
-    private double saldoAtual = 0;
+    private int senhaDaConta = 285611;
+    private double saldoAtual;
     private double deposito;
     private int chavePix = 48829951;
     private ArrayList<Double> historicoDeDeposito = new ArrayList<Double>();
@@ -22,8 +22,10 @@ public class ContaBancaria extends Usuario {
         System.out.println("| 5 - Verificar histórico de depósitos");
         System.out.println("| 6 - Verificar chave pix registrada");
         System.out.println("| 7 - Avaliar o econoMy");
-        System.out.println("| 8 - Sair do econoMy");
-        System.out.println("| 9 - Mostrar média das avaliações");
+        System.out.println("| 8 - Mostrar média das avaliações");
+        System.out.println("| 9 - Trocar chave pix");
+        System.out.println("| 10 - Trocar senha");
+        System.out.println("| 11 - Sair do econoMy");
     }
 
     public void exibeMensagemDeBoasVindas() {
@@ -34,33 +36,9 @@ public class ContaBancaria extends Usuario {
         System.out.println("Seja bem-vindo(a), " + getNome());
     }
 
-    public void intervaloNivelMenor() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            System.out.println("O intervalo foi interrompido!");
-        }
-    }
-
-    public void intervaloNivelMedio() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            System.out.println("O intervalo foi interrompido!");
-        }
-    }
-
-    public void intervaloNivelAlto() {
-        try {
-            Thread.sleep(2500);
-        } catch (InterruptedException e) {
-            System.out.println("O intervalo foi interrompido!");
-        }
-    }
-
     public void exibeProcedimentoInicial() {
         intervaloNivelMedio();
-        System.out.println("Primeiros passos: ");
+        System.out.println("Primeiros passos para criar sua conta!");
         intervaloNivelMenor();
         System.out.println("| 1 - Insira o seu nome ");
         System.out.println("| 2 - Insira a sua idade ");
@@ -112,6 +90,14 @@ public class ContaBancaria extends Usuario {
         } else {
             System.out.println("Nenhuma avaliação realizada no momento.");
         }
+    }
+
+    public void trocaDeSenha(int senhaInformada) {
+        this.senhaDaConta = senhaInformada;
+    }
+
+    public void trocaDeChavePix(int chaveInformada) {
+        this.chavePix = chaveInformada;
     }
 
     public int getSenhaDaConta() {

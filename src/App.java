@@ -7,7 +7,7 @@ public class App {
         Scanner entrada = new Scanner(System.in);
         ContaBancaria conta = new ContaBancaria();
         String nomeDoUsuario;
-        int idadeDoUsuario, senhaInformada, digiteOpcaoMenu;
+        int idadeDoUsuario, senhaInformada, digiteOpcaoMenu, senhaAtualTroca, novaSenha, chaveAtualTroca, novaChave;
         int tentativasDeTransferencias = 0;
         int avaliacaoDoEconomy;
         double valorADepositar, valorATransferir, chaveInformada;
@@ -134,14 +134,6 @@ public class App {
 
                             break;
                         case 8:
-                            conta.intervaloNivelMedio();
-                            System.out.println("Finalizando a aplicação ...");
-                            conta.intervaloNivelMenor();
-                            System.out.println("Finalizado!");
-
-                            return;
-
-                        case 9:
                             conta.intervaloNivelMenor();
                             System.out.println("Exibindo média das avaliações ...");
                             conta.intervaloNivelMedio();
@@ -150,6 +142,59 @@ public class App {
                             System.out.println("Retornando ao menu ...");
                             conta.intervaloNivelMenor();
                             break;
+
+                        case 9:
+
+                            System.out.print("Informe a chave atual: ");
+                            chaveAtualTroca = entrada.nextInt();
+
+                            if (chaveAtualTroca == conta.getChavePix()) {
+
+                                conta.intervaloNivelMenor();
+                                System.out.print("[Somente números] Informe a nova chave: ");
+                                novaChave = entrada.nextInt();
+
+                                conta.trocaDeChavePix(novaChave);
+                                conta.intervaloNivelMenor();
+                                System.out.println("Sua chave foi trocada!");
+
+                            } else {
+                                conta.intervaloNivelMenor();
+                                System.out.println("Chave pix incorreta!");
+
+                            }
+
+                            break;
+
+                        case 10:
+                            System.out.print("Informe a senha atual: ");
+                            senhaAtualTroca = entrada.nextInt();
+
+                            if (senhaAtualTroca == conta.getSenhaDaConta()) {
+
+                                conta.intervaloNivelMenor();
+                                System.out.print("Informe a senha desejada: ");
+                                novaSenha = entrada.nextInt();
+
+                                conta.trocaDeSenha(novaSenha);
+                                conta.intervaloNivelMenor();
+                                System.out.print("Troca de senha bem sucedida!");
+
+                            } else {
+                                conta.intervaloNivelMenor();
+                                System.out.println("Senha inválida!");
+                                break;
+                            }
+                            break;
+
+                        case 11:
+                            conta.intervaloNivelMedio();
+                            System.out.println("Finalizando a aplicação ...");
+                            conta.intervaloNivelMenor();
+                            System.out.println("Finalizado!");
+
+                            return;
+
                         default:
                             conta.intervaloNivelMenor();
                             System.out.println("Opção inválida!");
