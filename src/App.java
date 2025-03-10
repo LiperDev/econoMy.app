@@ -1,4 +1,5 @@
 import br.com.econoMy.classes.ContaBancaria;
+import br.com.econoMy.classes.Menu;
 
 import java.util.Scanner;
 
@@ -6,6 +7,7 @@ public class App {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         ContaBancaria conta = new ContaBancaria();
+        Menu menu = new Menu();
         String nomeDoUsuario;
         int idadeDoUsuario, senhaInformada, digiteOpcaoMenu, senhaAtualTroca, novaSenha, chaveAtualTroca, novaChave;
         int tentativasDeTransferencias = 0;
@@ -43,7 +45,7 @@ public class App {
                 while (true) {
 
                     conta.intervaloNivelAlto();
-                    conta.exibeMenuDinamico();
+                    menu.exibeMenuDinamico();
                     System.out.print("Digite sua opção: ");
                     digiteOpcaoMenu = entrada.nextInt();
 
