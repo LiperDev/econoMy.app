@@ -2,7 +2,7 @@ package br.com.econoMy.classes;
 
 import interfaces.IMenu;
 
-// Nova implementação: menu dinamico em uma classe separada, implementa o IMenu (que deverá por obrigação utilizar o método contrato da interface)
+// Nova implementação
 
 public class Menu implements IMenu {
 
