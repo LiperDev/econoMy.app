@@ -7,9 +7,9 @@ public class ContaBancaria extends Usuario {
     private double saldoAtual;
     private double deposito;
     private int chavePix = 48829951;
-    private ArrayList<Double> historicoDeDeposito = new ArrayList<Double>();
-    private ArrayList<Double> historicoDeTransferencias = new ArrayList<Double>();
-    private ArrayList<Integer> avaliacao = new ArrayList<Integer>();
+    private final ArrayList<Double> historicoDeDeposito = new ArrayList<Double>();
+    private final ArrayList<Double> historicoDeTransferencias = new ArrayList<Double>();
+    private final ArrayList<Integer> historicoAvaliacoes = new ArrayList<Integer>();
     private int mediaDasAvaliacoes;
     private int somaDasAvaliacoes;
     private int quantidadeDeAvaliacoes;
@@ -64,7 +64,7 @@ public class ContaBancaria extends Usuario {
     }
 
     public void avaliacao(int avaliacao) {
-        this.avaliacao.add(avaliacao);
+        this.historicoAvaliacoes.add(avaliacao);
         this.somaDasAvaliacoes = this.somaDasAvaliacoes + avaliacao;
         this.quantidadeDeAvaliacoes++;
     }
@@ -115,7 +115,7 @@ public class ContaBancaria extends Usuario {
     }
 
     public ArrayList<Integer> getAvaliacao() {
-        return avaliacao;
+        return this.historicoAvaliacoes;
     }
 
     public int getMediaDasAvaliacoes() {

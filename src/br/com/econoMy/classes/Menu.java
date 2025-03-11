@@ -1,10 +1,10 @@
 package br.com.econoMy.classes;
 
-import interfaces.IMenu;
+import br.com.econoMy.interfaces.IMenu;
 
 // Nova implementação
 
-public class Menu implements IMenu {
+public final class Menu implements IMenu {
 
     public void exibeMenuDinamico() {
         System.out.println("| 1 - Verificar saldo atual");

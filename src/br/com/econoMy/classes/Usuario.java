@@ -1,6 +1,6 @@
 package br.com.econoMy.classes;
 
-public class Usuario {
+public class Usuario extends IntervalosAplicacao{
     private String nome;
     private int idadeDoUsuario;
 
@@ -15,30 +15,6 @@ public class Usuario {
             intervaloNivelMedio();
             System.out.println("Idade permitida!");
             this.idadeDoUsuario = idade;
-        }
-    }
-
-    public void intervaloNivelMenor() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            System.out.println("O intervalo foi interrompido!");
-        }
-    }
-
-    public void intervaloNivelMedio() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            System.out.println("O intervalo foi interrompido!");
-        }
-    }
-
-    public void intervaloNivelAlto() {
-        try {
-            Thread.sleep(2500);
-        } catch (InterruptedException e) {
-            System.out.println("O intervalo foi interrompido!");
         }
     }
 
