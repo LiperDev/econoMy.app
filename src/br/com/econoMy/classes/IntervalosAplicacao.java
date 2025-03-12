@@ -1,5 +1,6 @@
 package br.com.econoMy.classes;
 
+// Adição de uma nova classe herdada por Usuário, responsabilidade de intervalos da aplicação
 public class IntervalosAplicacao {
     private static final int INTERVALO_PEQUENO = 1000;
     private static final int INTERVALO_MEDIO = 2000;
