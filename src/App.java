@@ -32,11 +32,13 @@ public class App {
         System.out.print("Informe sua idade: ");
         idadeDoUsuario = entrada.nextInt();
 
+        System.out.println("Idade informada: " + conta.getIdade());
+
         conta.verificaIdadePermitida(idadeDoUsuario);
         if (idadeDoUsuario >= 18 && idadeDoUsuario <= 120) {
 
             intervalo.intervaloNivelMedio();
-            System.out.print("Informe sua senha: ");
+            System.out.print("(somente números) Informe sua senha: ");
             senhaInformada = entrada.nextInt();
 
             conta.verificaSenha(senhaInformada);
