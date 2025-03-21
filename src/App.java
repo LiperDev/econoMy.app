@@ -56,7 +56,7 @@ public class App {
 
                     IntervalosAplicacao.intervaloNivelAlto();
                     menuPrincipal.exibeMenuDinamico();
-                    System.out.print("Digite sua opção: ");
+                    menuPrincipal.campoDeDigitacao();
                     digiteOpcaoMenu = entrada.nextInt();
 
                     switch (digiteOpcaoMenu) {
@@ -201,7 +201,7 @@ public class App {
 
                         case 11:
                             menuSair.exibeMenuDinamico();
-                            System.out.print("Digite a opção: ");
+                            menuSair.campoDeDigitacao();
                             opcaoSair = entrada.nextInt();
 
                             switch (opcaoSair) {

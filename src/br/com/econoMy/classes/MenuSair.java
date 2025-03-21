@@ -9,4 +9,9 @@ public class MenuSair implements IMenu {
         System.out.println("1 - Sim, tenho certeza!");
         System.out.println("2 - Não, gostaria de voltar!");
     }
+
+    @Override
+    public void campoDeDigitacao() {
+        System.out.print("Digite o que gostaria de fazer: ");
+    }
 }

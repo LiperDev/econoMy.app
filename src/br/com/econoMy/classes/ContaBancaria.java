@@ -1,7 +1,5 @@
 package br.com.econoMy.classes;
 
-// Exibe saldo, verifica a senha do usuário.
-
 public class ContaBancaria {
     private int senhaDaConta = 6541;
     private double saldoAtual;;
@@ -12,6 +10,12 @@ public class ContaBancaria {
         if (senha == this.senhaDaConta) {
             IntervalosAplicacao.intervaloNivelMenor();
             System.out.println("Senha correta!");
+            IntervalosAplicacao.intervaloNivelMenor();
+            System.out.println("Entrando na sua conta ...");
+            IntervalosAplicacao.intervaloNivelMenor();
+            System.out.println("Aguarde ...");
+            IntervalosAplicacao.intervaloNivelMenor();
+            System.out.println("Entrou!");
         } else {
             IntervalosAplicacao.intervaloNivelMenor();
             System.out.println("Senha incorreta!");

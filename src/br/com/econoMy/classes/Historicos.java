@@ -2,16 +2,14 @@ package br.com.econoMy.classes;
 import java.util.ArrayList;
 import java.util.Collections;
 
-// Maior classe, com responsabilidade maior de armazenamento
-
 public class Historicos extends ContaBancaria{
     private ArrayList<Double> historicoDeDeposito = new ArrayList<Double>();
     private ArrayList<Double> historicoDeTransferencias = new ArrayList<Double>();
     private ArrayList<Integer> historicoAvaliacoes = new ArrayList<Integer>();
+    private ContaBancaria contaBancaria;
     private int mediaDasAvaliacoes;
     private int somaDasAvaliacoes;
     private int quantidadeDeAvaliacoes;
-    private ContaBancaria contaBancaria;
 
     public Historicos(ContaBancaria contaBancaria) {
         this.contaBancaria = contaBancaria;
@@ -44,16 +42,9 @@ public class Historicos extends ContaBancaria{
             this.mediaDasAvaliacoes = (this.somaDasAvaliacoes / this.quantidadeDeAvaliacoes);
             System.out.println("média das avaliações: " + getMediaDasAvaliacoes());
         } else {
-            System.out.println("Nenhuma avaliação realizada no momento.");
+            System.out.println("O sistema não possui avaliações!");
+            IntervalosAplicacao.intervaloNivelMenor();
         }
-    }
-
-    private void ordenaHistoricoDeDepositos(ArrayList<Double> historicoDeposito) {
-        Collections.sort(historicoDeposito);
-    }
-
-    private void ordenaHistoricoDeTransferencias(ArrayList<Double> historicoTransferencia) {
-        Collections.sort(historicoTransferencia);
     }
 
     public void exibeHistoricoDeTransferencia() {
@@ -64,6 +55,14 @@ public class Historicos extends ContaBancaria{
     public void exibeHistoricoDeDepositos() {
         ordenaHistoricoDeDepositos(this.historicoDeDeposito);
         System.out.println(this.historicoDeDeposito);
+    }
+
+    private void ordenaHistoricoDeDepositos(ArrayList<Double> historicoDeposito) {
+        Collections.sort(historicoDeposito);
+    }
+
+    private void ordenaHistoricoDeTransferencias(ArrayList<Double> historicoTransferencia) {
+        Collections.sort(historicoTransferencia);
     }
 
     public int getMediaDasAvaliacoes() {

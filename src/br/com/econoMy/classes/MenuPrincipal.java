@@ -16,4 +16,9 @@ public class MenuPrincipal implements IMenu {
         System.out.println("| 10 - Trocar senha");
         System.out.println("| 11 - Sair do econoMy");
     }
+
+    @Override
+    public void campoDeDigitacao() {
+        System.out.print("Digite a opção de navegação: ");
+    }
 }
