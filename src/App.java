@@ -1,6 +1,5 @@
-import br.com.econoMy.classes.ContaBancaria;
-import br.com.econoMy.classes.IntervalosAplicacao;
-import br.com.econoMy.classes.Menu;
+import br.com.econoMy.classes.*;
+import br.com.econoMy.interfaces.IMenu;
 
 import java.util.Scanner;
 
@@ -8,36 +7,41 @@ public class App {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
-        IntervalosAplicacao intervalo = new IntervalosAplicacao();
-        Menu menu = new Menu();
+        IMenu menuPrincipal = new MenuPrincipal();
+        IMenu menuSair = new MenuSair();
+        Usuario usuario = new Usuario();
         ContaBancaria conta = new ContaBancaria();
+        Historicos historico = new Historicos(conta);
 
         String nomeDoUsuario;
-        int idadeDoUsuario, senhaInformada, digiteOpcaoMenu, senhaAtualTroca, novaSenha, chaveAtualTroca, novaChave;
+        int idadeDoUsuario, senhaInformada, digiteOpcaoMenu, senhaAtualTroca, novaSenha, chaveAtualTroca, novaChave, opcaoSair;
         int tentativasDeTransferencias = 0;
         int avaliacaoDoEconomy;
         double valorADepositar, valorATransferir, chaveInformada;
 
-        conta.exibeMensagemDeBoasVindas();
-        conta.exibeProcedimentoInicial();
+        usuario.exibeMensagemDeBoasVindas();
+        usuario.exibeProcedimentoInicial();
 
+        IntervalosAplicacao.intervaloNivelMedio();
         System.out.print("Informe o seu nome: ");
         nomeDoUsuario = entrada.nextLine();
 
-        conta.setNome(nomeDoUsuario);
-        intervalo.intervaloNivelMenor();
-        System.out.println("Nome informado: " + conta.getNome());
+        usuario.setNome(nomeDoUsuario);
+        IntervalosAplicacao.intervaloNivelMenor();
+        System.out.println("Olá, " + usuario.getNome() + ", tudo bem?");
 
-        intervalo.intervaloNivelMenor();
+        IntervalosAplicacao.intervaloNivelMenor();
+
         System.out.print("Informe sua idade: ");
         idadeDoUsuario = entrada.nextInt();
 
-        System.out.println("Idade informada: " + conta.getIdade());
+        usuario.setIdadeDoUsuario(idadeDoUsuario);
+        System.out.println("Idade informada: " + usuario.getIdadeDoUsuario());
 
-        conta.verificaIdadePermitida(idadeDoUsuario);
+        usuario.verificaIdadePermitida(idadeDoUsuario);
         if (idadeDoUsuario >= 18 && idadeDoUsuario <= 120) {
 
-            intervalo.intervaloNivelMedio();
+            IntervalosAplicacao.intervaloNivelMedio();
             System.out.print("(somente números) Informe sua senha: ");
             senhaInformada = entrada.nextInt();
 
@@ -45,64 +49,64 @@ public class App {
 
             if (senhaInformada == conta.getSenhaDaConta()) {
 
-                intervalo.intervaloNivelMenor();
-                conta.exibeBoasVindasAoUsuarioDaConta();
+                IntervalosAplicacao.intervaloNivelMenor();
+                usuario.exibeBoasVindasAoUsuarioDaConta();
 
                 while (true) {
 
-                    intervalo.intervaloNivelAlto();
-                    menu.exibeMenuDinamico();
+                    IntervalosAplicacao.intervaloNivelAlto();
+                    menuPrincipal.exibeMenuDinamico();
                     System.out.print("Digite sua opção: ");
                     digiteOpcaoMenu = entrada.nextInt();
 
                     switch (digiteOpcaoMenu) {
                         case 1:
                             System.out.println("Exibindo saldo atual da conta ...");
-                            intervalo.intervaloNivelMedio();
-                            System.out.println(conta.getNome() + ", seu saldo atual é: " + conta.getSaldoAtual());
+                            IntervalosAplicacao.intervaloNivelMedio();
+                            System.out.println(usuario.getNome() + ", seu saldo atual é: " + "| " + conta.getSaldoAtual() + " |");
 
                             break;
                         case 2:
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             System.out.print("Digite o valor que deseja depositar: ");
                             valorADepositar = entrada.nextDouble();
 
                             if (valorADepositar <= 0) {
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Valor inválido!");
                             } else {
                                 conta.adicionaUmValorAConta(valorADepositar);
-                                conta.adicionaUmValorAoHistoricoDeDepositos(valorADepositar);
-                                intervalo.intervaloNivelMenor();
+                                historico.adicionaUmValorAoHistoricoDeDepositos(valorADepositar);
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Valor depositado em sua conta: " + valorADepositar);
                             }
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             System.out.println("Voltando ao menu ...");
 
                             break;
                         case 3:
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             System.out.print("Informe sua chave pix: ");
                             chaveInformada = entrada.nextDouble();
 
                             if (chaveInformada == conta.getChavePix()) {
 
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.print("Valor a transferir: ");
                                 valorATransferir = entrada.nextDouble();
 
-                                conta.transfereUmValorDaConta(valorATransferir);
-                                intervalo.intervaloNivelMenor();
+                                historico.transfereUmValorDaConta(valorATransferir);
+                                IntervalosAplicacao.intervaloNivelMenor();
 
                             } else {
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Chave pix errada!");
                                 tentativasDeTransferencias++;
 
                                 if (tentativasDeTransferencias == 3) {
-                                    intervalo.intervaloNivelMenor();
+                                    IntervalosAplicacao.intervaloNivelMenor();
                                     System.out.println("Conta bloqueada!");
-                                    intervalo.intervaloNivelMedio();
+                                    IntervalosAplicacao.intervaloNivelMedio();
                                     System.out.println("Encerrando o aplicativo ...");
 
                                     return;
@@ -112,12 +116,12 @@ public class App {
                             break;
                         case 4:
                             System.out.println("Exibindo histórico de transferências ...");
-                            System.out.println(conta.getHistoricoDeTransferencias());
+                            historico.exibeHistoricoDeTransferencia();
 
                             break;
                         case 5:
                             System.out.println("Exibindo histórico de depósitos ...");
-                            System.out.println(conta.getHistoricoDeDeposito());
+                            historico.exibeHistoricoDeDepositos();
 
                             break;
                         case 6:
@@ -133,22 +137,22 @@ public class App {
                                 System.out.println("Valor inválido!");
                                 break;
                             } else {
-                                conta.avaliacao(avaliacaoDoEconomy);
+                                historico.avaliacao(avaliacaoDoEconomy);
                                 System.out.println("Avaliação bem sucedida!");
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Retornando ao menu ...");
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                             }
 
                             break;
                         case 8:
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             System.out.println("Exibindo média das avaliações ...");
-                            intervalo.intervaloNivelMedio();
-                            conta.exibirMediaDasAvaliacoes();
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelAlto();
+                            historico.exibirMediaDasAvaliacoes();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             System.out.println("Retornando ao menu ...");
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             break;
 
                         case 9:
@@ -158,16 +162,16 @@ public class App {
 
                             if (chaveAtualTroca == conta.getChavePix()) {
 
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.print("[Somente números] Informe a nova chave: ");
                                 novaChave = entrada.nextInt();
 
                                 conta.trocaDeChavePix(novaChave);
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Sua chave foi trocada!");
 
                             } else {
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Chave pix incorreta!");
 
                             }
@@ -180,54 +184,65 @@ public class App {
 
                             if (senhaAtualTroca == conta.getSenhaDaConta()) {
 
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.print("Informe a senha desejada: ");
                                 novaSenha = entrada.nextInt();
 
                                 conta.trocaDeSenha(novaSenha);
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.print("Troca de senha bem sucedida!");
 
                             } else {
-                                intervalo.intervaloNivelMenor();
+                                IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Senha inválida!");
                                 break;
                             }
                             break;
 
                         case 11:
-                            intervalo.intervaloNivelMedio();
-                            System.out.println("Finalizando a aplicação ...");
-                            intervalo.intervaloNivelMenor();
-                            System.out.println("Finalizado!");
+                            menuSair.exibeMenuDinamico();
+                            System.out.print("Digite a opção: ");
+                            opcaoSair = entrada.nextInt();
 
-                            return;
+                            switch (opcaoSair) {
+                                case 1:
+                                    IntervalosAplicacao.intervaloNivelMedio();
+                                    System.out.println("Finalizando a aplicação ...");
+                                    IntervalosAplicacao.intervaloNivelMenor();
+                                    System.out.println("Finalizado!");
+                                    return;
+                                case 2:
+                                    IntervalosAplicacao.intervaloNivelMedio();
+                                    System.out.println("Retornando ao menu ...");
+                                    IntervalosAplicacao.intervaloNivelMenor();
+                                    break;
+                            }
+                            break;
 
                         default:
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             System.out.println("Opção inválida!");
-                            intervalo.intervaloNivelMenor();
+                            IntervalosAplicacao.intervaloNivelMenor();
                             System.out.println("Selecione uma opção válida!");
 
                             break;
                     }
-
                 }
 
             } else {
-                intervalo.intervaloNivelMenor();
-                System.out.println("Você não tem acesso a essa conta, " + conta.getNome()+".");
-                intervalo.intervaloNivelMenor();
+                IntervalosAplicacao.intervaloNivelMenor();
+                System.out.println("Você não tem acesso a essa conta, " + usuario.getNome()+".");
+                IntervalosAplicacao.intervaloNivelMenor();
                 System.out.println("Finalizando a aplicação ...");
-                intervalo.intervaloNivelMenor();
+                IntervalosAplicacao.intervaloNivelMenor();
                 System.out.println("Finalizado!");
             }
 
         } else {
 
-            intervalo.intervaloNivelMenor();
+            IntervalosAplicacao.intervaloNivelMenor();
             System.out.println("Finalizando a aplicação ...");
-            intervalo.intervaloNivelMenor();
+            IntervalosAplicacao.intervaloNivelMenor();
             System.out.println("Finalizado!");
         }
     }

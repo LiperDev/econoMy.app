@@ -1,8 +1,27 @@
 package br.com.econoMy.classes;
+import static br.com.econoMy.classes.IntervalosAplicacao.intervaloNivelMedio;
 
-public class Usuario extends IntervalosAplicacao{
+public class Usuario {
     private String nome;
     private int idadeDoUsuario;
+
+
+    public void exibeMensagemDeBoasVindas() {
+        System.out.println("Seja bem-vindo ao aplicativo econoMy!");
+    }
+
+    public void exibeProcedimentoInicial() {
+        IntervalosAplicacao.intervaloNivelMedio();
+        System.out.println("Primeiros passos para criar sua conta!");
+        IntervalosAplicacao.intervaloNivelMenor();
+        System.out.println("| 1 - Insira o seu nome ");
+        IntervalosAplicacao.intervaloNivelMenor();
+        System.out.println("| 2 - Insira a sua idade ");
+    }
+
+    public void exibeBoasVindasAoUsuarioDaConta() {
+        System.out.println("Seja bem-vindo(a), " + getNome());
+    }
 
     public void verificaIdadePermitida(int idade) {
         if (idade <= 0) {
@@ -18,15 +37,19 @@ public class Usuario extends IntervalosAplicacao{
         }
     }
 
-    public int getIdade() {
-        return idadeDoUsuario;
-    }
-
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public int getIdadeDoUsuario() {
+        return idadeDoUsuario;
+    }
+
+    public void setIdadeDoUsuario(int idadeDoUsuario) {
+        this.idadeDoUsuario = idadeDoUsuario;
     }
 }
