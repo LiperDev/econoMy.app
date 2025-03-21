@@ -2,6 +2,8 @@ package br.com.econoMy.classes;
 import java.util.ArrayList;
 import java.util.Collections;
 
+// Maior classe, com responsabilidade maior de armazenamento
+
 public class Historicos extends ContaBancaria{
     private ArrayList<Double> historicoDeDeposito = new ArrayList<Double>();
     private ArrayList<Double> historicoDeTransferencias = new ArrayList<Double>();

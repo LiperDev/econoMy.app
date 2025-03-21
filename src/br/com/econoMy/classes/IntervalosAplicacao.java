@@ -1,5 +1,7 @@
 package br.com.econoMy.classes;
 
+// Responsável apenas por criar intervalos na aplicação
+
 public class IntervalosAplicacao {
     private static final int INTERVALO_PEQUENO = 1000;
     private static final int INTERVALO_MEDIO = 2000;

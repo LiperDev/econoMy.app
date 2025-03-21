@@ -1,9 +1,11 @@
 package br.com.econoMy.classes;
 
+// Exibe saldo, verifica a senha do usuário
+
 public class ContaBancaria {
-    private int senhaDaConta = 1;
+    private int senhaDaConta = 6541;
     private double saldoAtual;;
-    private int chavePix = 1;
+    private int chavePix = 1251;
 
 
     public void verificaSenha(int senha) {
