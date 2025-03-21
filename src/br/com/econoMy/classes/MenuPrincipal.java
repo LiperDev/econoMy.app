@@ -1,6 +1,8 @@
 package br.com.econoMy.classes;
 import br.com.econoMy.interfaces.IMenu;
 
+//s
+
 public class MenuPrincipal implements IMenu {
 
     public void exibeMenuDinamico() {
