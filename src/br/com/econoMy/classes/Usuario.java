@@ -1,6 +1,8 @@
 package br.com.econoMy.classes;
 import static br.com.econoMy.classes.IntervalosAplicacao.intervaloNivelMedio;
 
+// Responsável apenas por conter as informações gerais do usuário
+
 public class Usuario {
     private String nome;
     private int idadeDoUsuario;
