@@ -1,6 +1,6 @@
 package br.com.econoMy.classes;
 
-// Exibe saldo, verifica a senha do usuário
+// Exibe saldo, verifica a senha do usuário.
 
 public class ContaBancaria {
     private int senhaDaConta = 6541;
