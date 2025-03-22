@@ -57,10 +57,12 @@ public class Historicos extends ContaBancaria{
         System.out.println(this.historicoDeDeposito);
     }
 
+    // metodo que ordenará todos os itens do histórico de depósito
     private void ordenaHistoricoDeDepositos(ArrayList<Double> historicoDeposito) {
         Collections.sort(historicoDeposito);
     }
 
+    // metodo que ordenará todos os itens do histórico de transações
     private void ordenaHistoricoDeTransferencias(ArrayList<Double> historicoTransferencia) {
         Collections.sort(historicoTransferencia);
     }

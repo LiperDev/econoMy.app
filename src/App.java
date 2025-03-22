@@ -1,6 +1,5 @@
 import br.com.econoMy.classes.*;
 import br.com.econoMy.interfaces.IMenu;
-
 import java.util.Scanner;
 
 public class App {

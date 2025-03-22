@@ -1,10 +1,9 @@
 package br.com.econoMy.classes;
 import br.com.econoMy.interfaces.IMenu;
 
-//s
-
 public class MenuPrincipal implements IMenu {
 
+    @Override
     public void exibeMenuDinamico() {
         System.out.println("| 1 - Verificar saldo atual");
         System.out.println("| 2 - Depositar um valor");

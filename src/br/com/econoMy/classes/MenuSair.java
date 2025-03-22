@@ -4,6 +4,7 @@ import br.com.econoMy.interfaces.IMenu;
 
 public class MenuSair implements IMenu {
 
+    @Override
     public void exibeMenuDinamico() {
         System.out.println("Você tem certeza?");
         System.out.println("1 - Sim, tenho certeza!");
