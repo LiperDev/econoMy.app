@@ -14,9 +14,18 @@ public class Usuario {
         IntervalosAplicacao.intervaloNivelMedio();
         System.out.println("Primeiros passos para criar sua conta!");
         IntervalosAplicacao.intervaloNivelMenor();
-        System.out.println("| 1 - Insira o seu nome ");
+        System.out.println("| 1 - Insira o seu nome; ");
         IntervalosAplicacao.intervaloNivelMenor();
-        System.out.println("| 2 - Insira a sua idade ");
+        System.out.println("| 2 - Insira a sua idade. ");
+        IntervalosAplicacao.intervaloNivelMenor();
+    }
+
+    public void olaTudoBem() {
+        System.out.println("Olá, " + getNome() + ", tudo bem?");
+    }
+
+    public void idadeInformada() {
+        System.out.println("Idade informada: " + getIdadeDoUsuario());
     }
 
     public void exibeBoasVindasAoUsuarioDaConta() {

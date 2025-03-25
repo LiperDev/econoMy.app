@@ -22,20 +22,20 @@ public class App {
         usuario.exibeProcedimentoInicial();
 
         IntervalosAplicacao.intervaloNivelMedio();
-        System.out.print("Informe o seu nome: ");
+        System.out.print("[Inserindo nome] Informe o seu nome: ");
         nomeDoUsuario = entrada.nextLine();
 
         usuario.setNome(nomeDoUsuario);
-        IntervalosAplicacao.intervaloNivelMenor();
-        System.out.println("Olá, " + usuario.getNome() + ", tudo bem?");
+        IntervalosAplicacao.intervaloNivelMedio();
+        usuario.olaTudoBem();
 
         IntervalosAplicacao.intervaloNivelMenor();
 
-        System.out.print("Informe sua idade: ");
+        System.out.print("[Informando idade] Informe sua idade: ");
         idadeDoUsuario = entrada.nextInt();
 
         usuario.setIdadeDoUsuario(idadeDoUsuario);
-        System.out.println("Idade informada: " + usuario.getIdadeDoUsuario());
+        usuario.idadeInformada();
 
         usuario.verificaIdadePermitida(idadeDoUsuario);
         if (idadeDoUsuario >= 18 && idadeDoUsuario <= 120) {
