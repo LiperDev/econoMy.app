@@ -1,5 +1,6 @@
 package br.com.econoMy.classes;
 import static br.com.econoMy.classes.IntervalosAplicacao.intervaloNivelMedio;
+import static br.com.econoMy.classes.IntervalosAplicacao.intervaloNivelMenor;
 
 public class Usuario {
     private String nome;
@@ -10,14 +11,19 @@ public class Usuario {
         System.out.println("Seja bem-vindo ao aplicativo econoMy!");
     }
 
-    public void exibeProcedimentoInicial() {
-        IntervalosAplicacao.intervaloNivelMedio();
-        System.out.println("Primeiros passos para criar sua conta!");
-        IntervalosAplicacao.intervaloNivelMenor();
-        System.out.println("| 1 - Insira o seu nome; ");
-        IntervalosAplicacao.intervaloNivelMenor();
-        System.out.println("| 2 - Insira a sua idade. ");
-        IntervalosAplicacao.intervaloNivelMenor();
+    public void exibeInformacaoNome() {
+        System.out.println("[Digite o seu nome]");
+    }
+
+    public void exibeInformacaoSobreSenha() {
+        System.out.println("| Agora, informe a senha da sua conta");
+        intervaloNivelMenor();
+        System.out.println("| Lembre-se: a senha não possui letras");
+    }
+
+    public void exibeInformacaoIdade() {
+        System.out.println("Confirme que você é maior de idade");
+        System.out.println("[Digite a sua idade]");
     }
 
     public void olaTudoBem() {

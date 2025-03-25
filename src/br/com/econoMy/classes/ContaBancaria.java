@@ -22,6 +22,10 @@ public class ContaBancaria {
         }
     }
 
+    public void exibeSaldoAtual() {
+        System.out.println("Seu saldo atual é: " + getSaldoAtual());
+    }
+
     public void adicionaUmValorAConta(double valorInformado) {
         this.saldoAtual = this.saldoAtual + valorInformado;
     }

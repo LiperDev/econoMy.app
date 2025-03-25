@@ -19,19 +19,21 @@ public class App {
         double valorADepositar, valorATransferir, chaveInformada;
 
         usuario.exibeMensagemDeBoasVindas();
-        usuario.exibeProcedimentoInicial();
 
         IntervalosAplicacao.intervaloNivelMedio();
-        System.out.print("[Inserindo nome] Informe o seu nome: ");
+        usuario.exibeInformacaoNome();
+        IntervalosAplicacao.intervaloNivelMenor();
+        System.out.print("Nome: ");
         nomeDoUsuario = entrada.nextLine();
 
         usuario.setNome(nomeDoUsuario);
         IntervalosAplicacao.intervaloNivelMedio();
         usuario.olaTudoBem();
 
+        IntervalosAplicacao.intervaloNivelMedio();
+        usuario.exibeInformacaoIdade();
         IntervalosAplicacao.intervaloNivelMenor();
-
-        System.out.print("[Informando idade] Informe sua idade: ");
+        System.out.print("Idade: ");
         idadeDoUsuario = entrada.nextInt();
 
         usuario.setIdadeDoUsuario(idadeDoUsuario);
@@ -40,8 +42,8 @@ public class App {
         usuario.verificaIdadePermitida(idadeDoUsuario);
         if (idadeDoUsuario >= 18 && idadeDoUsuario <= 120) {
 
-            IntervalosAplicacao.intervaloNivelMedio();
-            System.out.print("(somente números) Informe sua senha: ");
+            usuario.exibeInformacaoSobreSenha();
+            System.out.print("Informe sua senha: ");
             senhaInformada = entrada.nextInt();
 
             conta.verificaSenha(senhaInformada);
@@ -62,7 +64,7 @@ public class App {
                         case 1:
                             System.out.println("Exibindo saldo atual da conta ...");
                             IntervalosAplicacao.intervaloNivelMedio();
-                            System.out.println(usuario.getNome() + ", seu saldo atual é: " + "| " + conta.getSaldoAtual() + " |");
+                            conta.exibeSaldoAtual();
 
                             break;
                         case 2:
