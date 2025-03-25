@@ -84,7 +84,6 @@ public class App {
                             }
                             IntervalosAplicacao.intervaloNivelMenor();
                             historico.exibeRetorno();
-                            IntervalosAplicacao.intervaloNivelMedio();
 
                             break;
                         case 3:
@@ -147,7 +146,7 @@ public class App {
                                 System.out.println("Avaliação bem sucedida!");
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 historico.exibeRetorno();
-                                IntervalosAplicacao.intervaloNivelMenor();
+
                             }
 
                             break;
@@ -172,13 +171,11 @@ public class App {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Sua chave foi trocada!");
                                 historico.exibeRetorno();
-                                IntervalosAplicacao.intervaloNivelMedio();
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Chave pix incorreta!");
                                 historico.exibeRetorno();
-                                IntervalosAplicacao.intervaloNivelMedio();
 
                             }
 
@@ -198,14 +195,12 @@ public class App {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.print("Troca de senha bem sucedida!");
                                 historico.exibeRetorno();
-                                IntervalosAplicacao.intervaloNivelMedio();
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Senha inválida!");
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 historico.exibeRetorno();
-                                IntervalosAplicacao.intervaloNivelMedio();
 
                                 break;
                             }
@@ -225,8 +220,8 @@ public class App {
                                     return;
                                 case 2:
                                     IntervalosAplicacao.intervaloNivelMedio();
-                                    System.out.println("Retornando ao menu ...");
-                                    IntervalosAplicacao.intervaloNivelMenor();
+                                    historico.exibeRetorno();
+
                                     break;
                             }
                             break;
