@@ -65,6 +65,7 @@ public class App {
                             System.out.println("Exibindo saldo atual da conta ...");
                             IntervalosAplicacao.intervaloNivelMedio();
                             conta.exibeSaldoAtual();
+                            historico.exibeRetorno();
 
                             break;
                         case 2:
@@ -79,10 +80,11 @@ public class App {
                                 conta.adicionaUmValorAConta(valorADepositar);
                                 historico.adicionaUmValorAoHistoricoDeDepositos(valorADepositar);
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                System.out.println("Valor depositado em sua conta: " + valorADepositar);
+                                conta.exibeDepositoSucesso(valorADepositar);
                             }
                             IntervalosAplicacao.intervaloNivelMenor();
-                            System.out.println("Voltando ao menu ...");
+                            historico.exibeRetorno();
+                            IntervalosAplicacao.intervaloNivelMedio();
 
                             break;
                         case 3:
@@ -106,7 +108,9 @@ public class App {
 
                                 if (tentativasDeTransferencias == 3) {
                                     IntervalosAplicacao.intervaloNivelMenor();
-                                    System.out.println("Conta bloqueada!");
+                                    System.out.println(usuario.getNome() + ", sua conta foi bloqueada!");
+                                    IntervalosAplicacao.intervaloNivelMenor();
+                                    System.out.println("Motivo: inúmeras tentativas");
                                     IntervalosAplicacao.intervaloNivelMedio();
                                     System.out.println("Encerrando o aplicativo ...");
 
@@ -116,18 +120,18 @@ public class App {
 
                             break;
                         case 4:
-                            System.out.println("Exibindo histórico de transferências ...");
                             historico.exibeHistoricoDeTransferencia();
+                            historico.exibeRetorno();
 
                             break;
                         case 5:
-                            System.out.println("Exibindo histórico de depósitos ...");
                             historico.exibeHistoricoDeDepositos();
+                            historico.exibeRetorno();
 
                             break;
                         case 6:
-                            System.out.println("Exibindo a chave pix registrada ...");
-                            System.out.println("chave pix: " + conta.getChavePix());
+                            historico.exibeChavePixAtual();
+                            historico.exibeRetorno();
 
                             break;
                         case 7:
@@ -139,21 +143,18 @@ public class App {
                                 break;
                             } else {
                                 historico.avaliacao(avaliacaoDoEconomy);
+                                IntervalosAplicacao.intervaloNivelMedio();
                                 System.out.println("Avaliação bem sucedida!");
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                System.out.println("Retornando ao menu ...");
+                                historico.exibeRetorno();
                                 IntervalosAplicacao.intervaloNivelMenor();
                             }
 
                             break;
                         case 8:
-                            IntervalosAplicacao.intervaloNivelMenor();
-                            System.out.println("Exibindo média das avaliações ...");
-                            IntervalosAplicacao.intervaloNivelAlto();
                             historico.exibirMediaDasAvaliacoes();
-                            IntervalosAplicacao.intervaloNivelMenor();
-                            System.out.println("Retornando ao menu ...");
-                            IntervalosAplicacao.intervaloNivelMenor();
+                            historico.exibeRetorno();
+
                             break;
 
                         case 9:
@@ -164,16 +165,20 @@ public class App {
                             if (chaveAtualTroca == conta.getChavePix()) {
 
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                System.out.print("[Somente números] Informe a nova chave: ");
+                                System.out.print("Informe a nova chave: ");
                                 novaChave = entrada.nextInt();
 
                                 conta.trocaDeChavePix(novaChave);
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Sua chave foi trocada!");
+                                historico.exibeRetorno();
+                                IntervalosAplicacao.intervaloNivelMedio();
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Chave pix incorreta!");
+                                historico.exibeRetorno();
+                                IntervalosAplicacao.intervaloNivelMedio();
 
                             }
 
@@ -192,10 +197,16 @@ public class App {
                                 conta.trocaDeSenha(novaSenha);
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.print("Troca de senha bem sucedida!");
+                                historico.exibeRetorno();
+                                IntervalosAplicacao.intervaloNivelMedio();
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Senha inválida!");
+                                IntervalosAplicacao.intervaloNivelMenor();
+                                historico.exibeRetorno();
+                                IntervalosAplicacao.intervaloNivelMedio();
+
                                 break;
                             }
                             break;

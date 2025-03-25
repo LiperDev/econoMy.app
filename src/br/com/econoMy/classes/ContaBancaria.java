@@ -26,6 +26,10 @@ public class ContaBancaria {
         System.out.println("Seu saldo atual é: " + getSaldoAtual());
     }
 
+    public void exibeDepositoSucesso(double valorADepositar) {
+        System.out.println("Valor depositado em sua conta: " + valorADepositar);
+    }
+
     public void adicionaUmValorAConta(double valorInformado) {
         this.saldoAtual = this.saldoAtual + valorInformado;
     }

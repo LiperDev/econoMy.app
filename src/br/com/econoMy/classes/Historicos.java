@@ -47,14 +47,31 @@ public class Historicos extends ContaBancaria{
         }
     }
 
+    public void exibeRetorno() {
+        System.out.println("Retornando ao menu...");
+    }
+
+    public void exibeChavePixAtual() {
+        System.out.println("Exibindo a chave pix registrada ...");
+        IntervalosAplicacao.intervaloNivelMedio();
+        System.out.println("chave pix registrada: " + getChavePix());
+        IntervalosAplicacao.intervaloNivelMedio();
+    }
+
     public void exibeHistoricoDeTransferencia() {
         ordenaHistoricoDeTransferencias(this.historicoDeTransferencias);
+        System.out.println("Exibindo histórico de transferências ...");
+        IntervalosAplicacao.intervaloNivelMedio();
         System.out.println(this.historicoDeTransferencias);
+        IntervalosAplicacao.intervaloNivelMedio();
     }
 
     public void exibeHistoricoDeDepositos() {
         ordenaHistoricoDeDepositos(this.historicoDeDeposito);
+        System.out.println("Exibindo histórico de depósitos ...");
+        IntervalosAplicacao.intervaloNivelMedio();
         System.out.println(this.historicoDeDeposito);
+        IntervalosAplicacao.intervaloNivelMedio();
     }
 
     // metodo que ordenará todos os itens do histórico de depósito

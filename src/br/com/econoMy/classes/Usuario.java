@@ -23,6 +23,7 @@ public class Usuario {
 
     public void exibeInformacaoIdade() {
         System.out.println("Confirme que você é maior de idade");
+        IntervalosAplicacao.intervaloNivelMedio();
         System.out.println("[Digite a sua idade]");
     }
 
