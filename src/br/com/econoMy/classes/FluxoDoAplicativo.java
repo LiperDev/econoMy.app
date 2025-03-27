@@ -16,4 +16,19 @@ public class FluxoDoAplicativo {
         IntervalosAplicacao.intervaloNivelMedio();
     }
 
+    public static void valorInvalido() {
+        System.out.println("Valor inválido!");
+    }
+
+    public static void opcaoInvalida() {
+        System.out.println("Opção inválida!");
+    }
+
+    public static void senhaInvalida() {
+        System.out.println("Senha inválida!");
+    }
+
+    public static void chaveInvalida() {
+        System.out.println("Chave pix incorreta!");
+    }
 }

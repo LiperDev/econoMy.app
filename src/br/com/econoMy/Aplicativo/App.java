@@ -1,3 +1,4 @@
+package br.com.econoMy.Aplicativo;
 import br.com.econoMy.classes.*;
 import br.com.econoMy.interfaces.IMenu;
 import java.util.Scanner;
@@ -75,7 +76,7 @@ public class App {
 
                             if (valorADepositar <= 0) {
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                System.out.println("Valor inválido!");
+                                FluxoDoAplicativo.valorInvalido();
                             } else {
                                 conta.adicionaUmValorAConta(valorADepositar);
                                 historico.adicionaUmValorAoHistoricoDeDepositos(valorADepositar);
@@ -111,7 +112,8 @@ public class App {
                                     IntervalosAplicacao.intervaloNivelMedio();
                                     System.out.println("Motivo: inúmeras tentativas");
                                     IntervalosAplicacao.intervaloNivelMedio();
-                                    System.out.println("Encerrando o aplicativo ...");
+                                    FluxoDoAplicativo.finalizando();
+                                    FluxoDoAplicativo.finaliza();
 
                                     return;
                                 }
@@ -138,7 +140,7 @@ public class App {
                             avaliacaoDoEconomy = entrada.nextInt();
 
                             if (avaliacaoDoEconomy < 0 || avaliacaoDoEconomy > 10) {
-                                System.out.println("Valor inválido!");
+                                FluxoDoAplicativo.valorInvalido();
                                 break;
                             } else {
                                 historico.avaliacao(avaliacaoDoEconomy);
@@ -174,7 +176,7 @@ public class App {
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                System.out.println("Chave pix incorreta!");
+                                FluxoDoAplicativo.chaveInvalida();
                                 FluxoDoAplicativo.retorna();
 
                             }
@@ -198,7 +200,7 @@ public class App {
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                System.out.println("Senha inválida!");
+                                FluxoDoAplicativo.senhaInvalida();
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 FluxoDoAplicativo.retorna();
 
@@ -228,7 +230,7 @@ public class App {
 
                         default:
                             IntervalosAplicacao.intervaloNivelMenor();
-                            System.out.println("Opção inválida!");
+                            FluxoDoAplicativo.opcaoInvalida();
                             IntervalosAplicacao.intervaloNivelMenor();
                             System.out.println("Selecione uma opção válida!");
 
