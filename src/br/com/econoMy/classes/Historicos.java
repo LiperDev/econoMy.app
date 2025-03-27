@@ -48,11 +48,6 @@ public class Historicos extends ContaBancaria{
         }
     }
 
-    public void exibeRetorno() {
-        System.out.println("Retornando ao menu...");
-        IntervalosAplicacao.intervaloNivelMedio();
-    }
-
     public void exibeChavePixAtual() {
         System.out.println("Exibindo a chave pix registrada ...");
         IntervalosAplicacao.intervaloNivelMedio();

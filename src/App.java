@@ -65,7 +65,7 @@ public class App {
                             System.out.println("Exibindo saldo atual da conta ...");
                             IntervalosAplicacao.intervaloNivelMedio();
                             conta.exibeSaldoAtual();
-                            historico.exibeRetorno();
+                            FluxoDoAplicativo.retorna();
 
                             break;
                         case 2:
@@ -83,7 +83,7 @@ public class App {
                                 conta.exibeDepositoSucesso(valorADepositar);
                             }
                             IntervalosAplicacao.intervaloNivelMenor();
-                            historico.exibeRetorno();
+                            FluxoDoAplicativo.retorna();
 
                             break;
                         case 3:
@@ -108,7 +108,7 @@ public class App {
                                 if (tentativasDeTransferencias == 3) {
                                     IntervalosAplicacao.intervaloNivelMenor();
                                     System.out.println(usuario.getNome() + ", sua conta foi bloqueada!");
-                                    IntervalosAplicacao.intervaloNivelMenor();
+                                    IntervalosAplicacao.intervaloNivelMedio();
                                     System.out.println("Motivo: inúmeras tentativas");
                                     IntervalosAplicacao.intervaloNivelMedio();
                                     System.out.println("Encerrando o aplicativo ...");
@@ -120,17 +120,17 @@ public class App {
                             break;
                         case 4:
                             historico.exibeHistoricoDeTransferencia();
-                            historico.exibeRetorno();
+                            FluxoDoAplicativo.retorna();
 
                             break;
                         case 5:
                             historico.exibeHistoricoDeDepositos();
-                            historico.exibeRetorno();
+                            FluxoDoAplicativo.retorna();
 
                             break;
                         case 6:
                             historico.exibeChavePixAtual();
-                            historico.exibeRetorno();
+                            FluxoDoAplicativo.retorna();
 
                             break;
                         case 7:
@@ -145,14 +145,14 @@ public class App {
                                 IntervalosAplicacao.intervaloNivelMedio();
                                 System.out.println("Avaliação bem sucedida!");
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                historico.exibeRetorno();
+                                FluxoDoAplicativo.retorna();
 
                             }
 
                             break;
                         case 8:
                             historico.exibirMediaDasAvaliacoes();
-                            historico.exibeRetorno();
+                            FluxoDoAplicativo.retorna();
 
                             break;
 
@@ -170,12 +170,12 @@ public class App {
                                 conta.trocaDeChavePix(novaChave);
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Sua chave foi trocada!");
-                                historico.exibeRetorno();
+                                FluxoDoAplicativo.retorna();
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Chave pix incorreta!");
-                                historico.exibeRetorno();
+                                FluxoDoAplicativo.retorna();
 
                             }
 
@@ -194,13 +194,13 @@ public class App {
                                 conta.trocaDeSenha(novaSenha);
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.print("Troca de senha bem sucedida!");
-                                historico.exibeRetorno();
+                                FluxoDoAplicativo.retorna();
 
                             } else {
                                 IntervalosAplicacao.intervaloNivelMenor();
                                 System.out.println("Senha inválida!");
                                 IntervalosAplicacao.intervaloNivelMenor();
-                                historico.exibeRetorno();
+                                FluxoDoAplicativo.retorna();
 
                                 break;
                             }
@@ -214,13 +214,13 @@ public class App {
                             switch (opcaoSair) {
                                 case 1:
                                     IntervalosAplicacao.intervaloNivelMedio();
-                                    System.out.println("Finalizando a aplicação ...");
+                                    FluxoDoAplicativo.finalizando();
                                     IntervalosAplicacao.intervaloNivelMenor();
-                                    System.out.println("Finalizado!");
+                                    FluxoDoAplicativo.finaliza();
                                     return;
                                 case 2:
                                     IntervalosAplicacao.intervaloNivelMedio();
-                                    historico.exibeRetorno();
+                                    FluxoDoAplicativo.retorna();
 
                                     break;
                             }
@@ -240,17 +240,14 @@ public class App {
                 IntervalosAplicacao.intervaloNivelMenor();
                 System.out.println("Você não tem acesso a essa conta, " + usuario.getNome()+".");
                 IntervalosAplicacao.intervaloNivelMenor();
-                System.out.println("Finalizando a aplicação ...");
-                IntervalosAplicacao.intervaloNivelMenor();
-                System.out.println("Finalizado!");
+                FluxoDoAplicativo.finalizando();
+                FluxoDoAplicativo.finaliza();
             }
 
         } else {
 
-            IntervalosAplicacao.intervaloNivelMenor();
-            System.out.println("Finalizando a aplicação ...");
-            IntervalosAplicacao.intervaloNivelMenor();
-            System.out.println("Finalizado!");
+            FluxoDoAplicativo.finalizando();
+            FluxoDoAplicativo.finaliza();
         }
     }
 }
