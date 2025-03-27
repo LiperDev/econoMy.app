@@ -1,10 +1,13 @@
 package br.com.econoMy.classes;
 
+// Área da conta bancária
+
 public class ContaBancaria {
     private int senhaDaConta = 6541;
     private double saldoAtual;;
     private int chavePix = 1251;
 
+    // Metodo que irá verificar se a senha informada como argumento é igual a senha padrão do sistema
 
     public void verificaSenha(int senha) {
         if (senha == this.senhaDaConta) {
@@ -24,6 +27,7 @@ public class ContaBancaria {
 
     public void exibeSaldoAtual() {
         System.out.println("Seu saldo atual é: " + getSaldoAtual());
+        IntervalosAplicacao.intervaloNivelMenor();
     }
 
     public void exibeDepositoSucesso(double valorADepositar) {
@@ -35,7 +39,14 @@ public class ContaBancaria {
     }
 
     public void trocaDeSenha(int senhaInformada) {
-        this.senhaDaConta = senhaInformada;
+        if (senhaInformada == this.senhaDaConta) {
+            System.out.println("Senha idêntica!");
+            IntervalosAplicacao.intervaloNivelMenor();
+            System.out.println("Não foi possível efetuar a troca");
+        } else {
+            this.senhaDaConta = senhaInformada;
+            System.out.println("Troca de senha bem sucedida!");
+        }
     }
 
     public void trocaDeChavePix(int chaveInformada) {

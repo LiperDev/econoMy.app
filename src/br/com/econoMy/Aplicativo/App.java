@@ -63,6 +63,7 @@ public class App {
 
                     switch (digiteOpcaoMenu) {
                         case 1:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_SALDO");
                             System.out.println("Exibindo saldo atual da conta ...");
                             IntervalosAplicacao.intervaloNivelMedio();
                             conta.exibeSaldoAtual();
@@ -70,6 +71,7 @@ public class App {
 
                             break;
                         case 2:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_DEPOSITO");
                             IntervalosAplicacao.intervaloNivelMenor();
                             System.out.print("Digite o valor que deseja depositar: ");
                             valorADepositar = entrada.nextDouble();
@@ -88,6 +90,7 @@ public class App {
 
                             break;
                         case 3:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_TRANSFERENCIAS");
                             IntervalosAplicacao.intervaloNivelMenor();
                             System.out.print("Informe sua chave pix: ");
                             chaveInformada = entrada.nextDouble();
@@ -121,21 +124,25 @@ public class App {
 
                             break;
                         case 4:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_HISTORICO_TRANSFERENCIA");
                             historico.exibeHistoricoDeTransferencia();
                             FluxoDoAplicativo.retorna();
 
                             break;
                         case 5:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_HISTORICO_DEPOSITO");
                             historico.exibeHistoricoDeDepositos();
                             FluxoDoAplicativo.retorna();
 
                             break;
                         case 6:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_VERIFICAR_CHAVE_REGISTRADA");
                             historico.exibeChavePixAtual();
                             FluxoDoAplicativo.retorna();
 
                             break;
                         case 7:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_AVALIACAO");
                             System.out.print("[0 a 10] Avalie o aplicativo: ");
                             avaliacaoDoEconomy = entrada.nextInt();
 
@@ -153,13 +160,14 @@ public class App {
 
                             break;
                         case 8:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_AVALIACAO_MEDIA");
                             historico.exibirMediaDasAvaliacoes();
                             FluxoDoAplicativo.retorna();
 
                             break;
 
                         case 9:
-
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_TROCAR_CHAVE");
                             System.out.print("Informe a chave atual: ");
                             chaveAtualTroca = entrada.nextInt();
 
@@ -184,6 +192,7 @@ public class App {
                             break;
 
                         case 10:
+                            FluxoDoAplicativo.setoresBemVindos("OPCAO_TROCAR_SENHA");
                             System.out.print("Informe a senha atual: ");
                             senhaAtualTroca = entrada.nextInt();
 
@@ -194,8 +203,7 @@ public class App {
                                 novaSenha = entrada.nextInt();
 
                                 conta.trocaDeSenha(novaSenha);
-                                IntervalosAplicacao.intervaloNivelMenor();
-                                System.out.print("Troca de senha bem sucedida!");
+                                IntervalosAplicacao.intervaloNivelMedio();
                                 FluxoDoAplicativo.retorna();
 
                             } else {
