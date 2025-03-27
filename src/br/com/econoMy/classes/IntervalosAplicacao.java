@@ -10,6 +10,7 @@ public class IntervalosAplicacao {
         try {
             Thread.sleep(INTERVALO_PEQUENO);
         } catch (InterruptedException e) {
+            e.printStackTrace();
             System.out.println("O intervalo foi interrompido!");
         }
     }
@@ -18,6 +19,7 @@ public class IntervalosAplicacao {
         try {
             Thread.sleep(INTERVALO_MEDIO);
         } catch (InterruptedException e) {
+            e.printStackTrace();
             System.out.println("O intervalo foi interrompido!");
         }
     }
@@ -26,6 +28,7 @@ public class IntervalosAplicacao {
         try {
             Thread.sleep(INTERVALO_ALTO);
         } catch (InterruptedException e) {
+            e.printStackTrace();
             System.out.println("O intervalo foi interrompido!");
         }
     }
