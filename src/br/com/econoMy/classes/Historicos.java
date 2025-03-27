@@ -1,11 +1,12 @@
 package br.com.econoMy.classes;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Historicos extends ContaBancaria{
-    private ArrayList<Double> historicoDeDeposito = new ArrayList<Double>();
-    private ArrayList<Double> historicoDeTransferencias = new ArrayList<Double>();
-    private ArrayList<Integer> historicoAvaliacoes = new ArrayList<Integer>();
+    private List<Double> historicoDeDeposito = new ArrayList<Double>();
+    private List<Double> historicoDeTransferencias = new ArrayList<Double>();
+    private List<Integer> historicoAvaliacoes = new ArrayList<Integer>();
     private ContaBancaria contaBancaria;
     private int mediaDasAvaliacoes;
     private int somaDasAvaliacoes;
@@ -76,12 +77,12 @@ public class Historicos extends ContaBancaria{
     }
 
     // metodo que ordenará todos os itens do histórico de depósito
-    private void ordenaHistoricoDeDepositos(ArrayList<Double> historicoDeposito) {
+    private void ordenaHistoricoDeDepositos(List<Double> historicoDeposito) {
         Collections.sort(historicoDeposito);
     }
 
     // metodo que ordenará todos os itens do histórico de transações
-    private void ordenaHistoricoDeTransferencias(ArrayList<Double> historicoTransferencia) {
+    private void ordenaHistoricoDeTransferencias(List<Double> historicoTransferencia) {
         Collections.sort(historicoTransferencia);
     }
 
