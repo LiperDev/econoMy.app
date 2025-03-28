@@ -3,9 +3,9 @@ package br.com.econoMy.classes;
 // Área da conta bancária
 
 public class ContaBancaria {
-    private int senhaDaConta = 6541;
-    private double saldoAtual;;
-    private int chavePix = 1251;
+    private int senhaDaConta = 1;
+    private double saldoAtual;
+    private int chavePix = 1;
 
     // Metodo que irá verificar se a senha informada como argumento é igual a senha padrão do sistema
 

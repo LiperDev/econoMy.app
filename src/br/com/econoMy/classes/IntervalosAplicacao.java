@@ -1,14 +1,10 @@
 package br.com.econoMy.classes;
 
 public class IntervalosAplicacao {
-    private static final int INTERVALO_PEQUENO = 1000;
-    private static final int INTERVALO_MEDIO = 2000;
-    private static final int INTERVALO_ALTO = 2500;
-
 
     public static void intervaloNivelMenor() {
         try {
-            Thread.sleep(INTERVALO_PEQUENO);
+            Thread.sleep(IntervaloValores.INTERVALO_PEQUENO.getValor());
         } catch (InterruptedException e) {
             e.printStackTrace();
             System.out.println("O intervalo foi interrompido!");
@@ -17,7 +13,7 @@ public class IntervalosAplicacao {
 
     public static void intervaloNivelMedio() {
         try {
-            Thread.sleep(INTERVALO_MEDIO);
+            Thread.sleep(IntervaloValores.INTERVALO_MEDIO.getValor());
         } catch (InterruptedException e) {
             e.printStackTrace();
             System.out.println("O intervalo foi interrompido!");
@@ -26,7 +22,7 @@ public class IntervalosAplicacao {
 
     public static void intervaloNivelAlto() {
         try {
-            Thread.sleep(INTERVALO_ALTO);
+            Thread.sleep(IntervaloValores.INTERVALO_ALTO.getValor());
         } catch (InterruptedException e) {
             e.printStackTrace();
             System.out.println("O intervalo foi interrompido!");

@@ -8,23 +8,27 @@ public class Usuario {
 
 
     public void exibeMensagemDeBoasVindas() {
-        System.out.println("Seja bem-vindo ao aplicativo econoMy!");
+        System.out.println("| Bem-vindo(a) ao EconoMy! |");
     }
 
-    public void exibeInformacaoNome() {
-        System.out.println("[Digite o seu nome]");
+    public void digiteNome() {
+        System.out.print("Digite seu nome: ");
+    }
+
+    public void digiteIdade() {
+        System.out.print("Digite sua idade: ");
     }
 
     public void exibeInformacaoSobreSenha() {
-        System.out.println("| Agora, informe a senha da sua conta");
-        intervaloNivelMenor();
-        System.out.println("| Lembre-se: a senha não possui letras");
+        IntervalosAplicacao.intervaloNivelMedio();
+        System.out.println("Agora informe a senha da sua conta!");
+        IntervalosAplicacao.intervaloNivelMedio();
+        System.out.println("Somente números, por favor.");
+        IntervalosAplicacao.intervaloNivelMedio();
     }
 
-    public void exibeInformacaoIdade() {
-        System.out.println("Confirme que você é maior de idade");
-        IntervalosAplicacao.intervaloNivelMedio();
-        System.out.println("[Digite a sua idade]");
+    public void informeIdade() {
+        System.out.println("Você é de maior? Informe sua idade abaixo!");
     }
 
     public void olaTudoBem() {
@@ -33,10 +37,17 @@ public class Usuario {
 
     public void idadeInformada() {
         System.out.println("Idade informada: " + getIdadeDoUsuario());
+        IntervalosAplicacao.intervaloNivelMedio();
+        System.out.println("Verificando idade...");
+        IntervalosAplicacao.intervaloNivelMedio();
     }
 
     public void exibeBoasVindasAoUsuarioDaConta() {
         System.out.println("Seja bem-vindo(a), " + getNome());
+    }
+
+    public void carregandoMenu() {
+        System.out.println("Exibindo menu...");
     }
 
     public void verificaIdadePermitida(int idade) {
