@@ -1,5 +1,7 @@
 package br.com.econoMy.classes;
 
+// área de constantes
+
 public enum IntervaloValores {
     INTERVALO_PEQUENO(1000),
     INTERVALO_MEDIO(2000),

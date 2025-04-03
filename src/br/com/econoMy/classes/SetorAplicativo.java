@@ -1,5 +1,7 @@
 package br.com.econoMy.classes;
 
+// área de constantes
+
 public enum SetorAplicativo {
     SALDO,
     DEPOSITO,
