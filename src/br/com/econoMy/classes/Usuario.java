@@ -1,6 +1,5 @@
 package br.com.econoMy.classes;
 import static br.com.econoMy.classes.IntervalosAplicacao.intervaloNivelMedio;
-import static br.com.econoMy.classes.IntervalosAplicacao.intervaloNivelMenor;
 
 public class Usuario {
     private String nome;
